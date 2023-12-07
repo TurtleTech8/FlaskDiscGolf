@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from datetime import datetime
 from . import app
-import disc_data
+import disc_golf_app.disc_data as disc_data
 
 
 

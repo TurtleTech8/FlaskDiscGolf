@@ -1,4 +1,4 @@
-from extensions import mdb
+from disc_golf_app.extensions import mdb
 
 COLLECTION = mdb.client.DiscGolf.Discs
 
