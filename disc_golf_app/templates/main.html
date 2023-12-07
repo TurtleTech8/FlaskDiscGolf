@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Hello, Flask</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="{{url_for('static', filename='misc.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='misc.css')}}">
+        
+    </head>
+    <body style="background-color: #202020">
+        <div id="overlay"></div>
+        <div id="discs"></div>
+    </body>
+
+    <script>
+        var brands = JSON.parse('{{brands|tojson}}')
+        var discs = JSON.parse('{{discs|tojson}}')
+        createHeaders()
+    </script>
+</html>
