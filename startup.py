@@ -1,0 +1,1 @@
+from disc_golf_app.webapp import app
