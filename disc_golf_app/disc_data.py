@@ -32,10 +32,19 @@ class Disc:
         return f'{self.distance_category}: {self.brand} {self.name}'
 
 def getAllDiscs():
-    discs = []
-    for x in COLLECTION.find().sort([('speed', -1), ('fade', -1), ('turn', -1)]):
-        discs.append(Disc(x).__dict__)
-    return discs
+    # discs = []
+    # for x in COLLECTION.find({}, {'_id': False}).sort([('speed', -1), ('fade', -1), ('turn', -1)]):
+    #     discs.append(Disc(x).__dict__)
+    return list(COLLECTION.find({}, {'_id': False}).sort([('speed', -1), ('fade', -1), ('turn', -1)]))
 
 def getAllBrands():
     return COLLECTION.distinct('brand')
+
+def getSearchDiscs():
+    discs = []
+    for x in COLLECTION.find({}, {'name':1}):
+        discs.append(x['name'])
+    return discs
+
+def getDisc(name):
+    return COLLECTION.find_one({'name_lower': name}, {'_id': False})

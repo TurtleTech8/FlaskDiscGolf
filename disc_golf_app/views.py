@@ -1,4 +1,5 @@
 from flask import render_template
+from flask import request
 from . import app
 import disc_golf_app.disc_data as disc_data
 
@@ -15,5 +16,11 @@ def home():
 @app.route("/search")
 def search():
     return render_template(
-        "search.html"
+        "search.html",
+        brands=disc_data.getAllBrands(),
+        discs=disc_data.getSearchDiscs()
     )
+
+@app.route("/getDisc")
+def getDisc():
+    return disc_data.getDisc(request.args.get('name'))

@@ -2,6 +2,9 @@
 .navbar {
     color: #E0E0E0;
     display: flex;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 a:visited { text-decoration: none; color:#E0E0E0; }
@@ -123,4 +126,21 @@ a:hover, a:active { text-decoration: none; color:#E0E0E0 }
 }
 .putter {
     background-color:#009999         
+}
+
+.ui-widget {
+    font-size: 1em;
+    font-family: inherit;
+    color: #E0E0E0;
+    background-color: #606060;
+}
+.searchContainer {
+    text-align: center;
+}
+.searchBar {
+    width: 50%;
+    color: #E0E0E0;
+    background-color: #606060;
+    border: 2px solid black;
+    font-size: 2em;
 }

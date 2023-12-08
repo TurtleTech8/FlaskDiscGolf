@@ -3,5 +3,62 @@
 Search Discs
 {% endblock %}
 {% block content %}
-Search
+<div class="searchContainer">
+    <input type="text" id="searchDiscs" class="searchBar"></input>
+    <button id="selectDisc">Select</button>
+</div>
+
+<script>
+    var discs = JSON.parse('{{discs|tojson}}')
+
+    function getDisc(name) {
+        if(discs.map((x) => x.toLowerCase()).includes(name.toLowerCase())) {
+            $.ajax({
+                url: "{{url_for('getDisc')}}",
+                data: {name: name.toLowerCase()},
+                success: function(result) {
+                    console.log(result)
+                }
+            })
+        }
+        else {
+            console.log('no')
+        }
+        
+    }
+
+    $(document).ready(function () {
+        $("#selectDisc").click(function (e) {
+            console.log($('#searchDiscs').val())
+            getDisc($('#searchDiscs').val())
+            // if(discs.includes($('#searchDiscs').val())) {
+            //     console.log('yes')
+            // }
+            // else {
+            //     console.log('no')
+            // }
+        })
+        $("#searchDiscs").keyup(function (e) {
+            console.log(event.keyCode)
+            if (event.keyCode === 13) {
+                $("#selectDisc").click();
+            }
+        })
+    })
+    $(function () {
+        $('#searchDiscs').autocomplete({
+            source: discs,
+            select: function(event, ui) {getDisc(ui.item.value)}
+        })
+        // $('#brands').autocomplete({
+        //     minLength: 0,
+        //     source: function( request, response ) {
+        //                 var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+        //                 response( $.grep( discs, function( item ){
+        //                     return matcher.test( item );
+        //                 }) );
+        //             }
+        // })
+    })
+</script>
 {% endblock %}
