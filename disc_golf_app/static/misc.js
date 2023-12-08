@@ -76,7 +76,10 @@ function createModal(event){
     box.appendChild(category)
 
     let img = document.createElement('img')
-    img.src = currentDisc.data_picture
+    if (currentDisc.data_picture !== '')
+        img.src = currentDisc.data_picture
+    else
+        img.src = './static/no_image.jpg'
     box.appendChild(img)
     
     let flightContainer = document.createElement('div')

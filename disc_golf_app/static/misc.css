@@ -1,4 +1,21 @@
 
+.navbar {
+    color: #E0E0E0;
+    display: flex;
+}
+
+a:visited { text-decoration: none; color:#E0E0E0; }
+a:hover { text-decoration: none; color:#E0E0E0; }
+a:focus { text-decoration: none; color:#E0E0E0; }
+a:hover, a:active { text-decoration: none; color:#E0E0E0 }
+
+.navbarLinks {
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: none;
+    background: #606060;
+}
 
 .circle {
     display: flex;

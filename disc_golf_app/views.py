@@ -1,6 +1,4 @@
-from flask import Flask
 from flask import render_template
-from datetime import datetime
 from . import app
 import disc_golf_app.disc_data as disc_data
 
@@ -14,11 +12,8 @@ def home():
         discs=disc_data.getAllDiscs()
     )
 
-@app.route("/getDiscs")
-def getDiscs():
-    return disc_data.getAllDiscs()
-
-
-@app.route("/brands")
-def brands():
-    return disc_data.getAllBrands()
+@app.route("/search")
+def search():
+    return render_template(
+        "search.html"
+    )
