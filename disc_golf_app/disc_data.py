@@ -48,3 +48,12 @@ def getSearchDiscs():
 
 def getDisc(name):
     return COLLECTION.find_one({'name_lower': name}, {'_id': False})
+
+def getRelatedDiscs(name):
+    chosen_disc = getDisc(name)
+    return list(COLLECTION.find({'speed': chosen_disc['speed'],
+                     'turn': chosen_disc['turn'],
+                     'fade': chosen_disc['fade'],
+                     'name_lower': {'$ne': name}
+                     },
+                     {'_id': False, 'name': 1, 'distance_category': 1}))

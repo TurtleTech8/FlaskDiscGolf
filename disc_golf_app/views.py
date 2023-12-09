@@ -24,3 +24,7 @@ def search():
 @app.route("/getDisc")
 def getDisc():
     return disc_data.getDisc(request.args.get('name'))
+
+@app.route("/getRelatedDiscs")
+def getRelatedDiscs():
+    return disc_data.getRelatedDiscs(request.args.get('name'))

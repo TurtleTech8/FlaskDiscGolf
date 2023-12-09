@@ -7,6 +7,7 @@
     margin-bottom: 5px;
 }
 
+a {color: #E0E0E0;}
 a:visited { text-decoration: none; color:#E0E0E0; }
 a:hover { text-decoration: none; color:#E0E0E0; }
 a:focus { text-decoration: none; color:#E0E0E0; }
@@ -28,11 +29,16 @@ a:hover, a:active { text-decoration: none; color:#E0E0E0 }
     background: black;
     color: #E0E0E0;
     border-radius: 50%;
+    border: 5px solid black;
     width: 100px;
     height: 100px;
-    margin: 2.5px
+    margin: 2.5px;
+    text-shadow: 1px 1px 2px black;
 }
-.brandDiscs {
+.pointer {
+    cursor: pointer;
+}
+.discContainer {
     display: flex;
     flex-wrap: wrap;
 }
@@ -110,22 +116,40 @@ a:hover, a:active { text-decoration: none; color:#E0E0E0 }
 
 
 .distance-driver {
-    background-color:#000099
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#000099, white);
+    background-blend-mode: overlay;
 }
 .hybrid-driver {
-    background-color:#006600
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#006600, white);
+    background-blend-mode: overlay;
 }
 .fairway-driver {
-    background-color:#660099           
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#660099, white);
+    background-blend-mode: overlay;        
 }
 .midrange {
-    background-color:#CC0066        
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#CC0066, white);
+    background-blend-mode: overlay;     
 }
 .approach {
-    background-color: #660000                
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#660000, white);
+    background-blend-mode: overlay;            
 }
 .putter {
-    background-color:#009999         
+    background: 
+    radial-gradient(white, black 0%),
+    radial-gradient(#009999, white);
+    background-blend-mode: overlay;     
 }
 
 .ui-widget {
@@ -138,9 +162,48 @@ a:hover, a:active { text-decoration: none; color:#E0E0E0 }
     text-align: center;
 }
 .searchBar {
+    margin-bottom: 20px;
     width: 50%;
     color: #E0E0E0;
     background-color: #606060;
     border: 2px solid black;
     font-size: 2em;
+}
+.selectDisc {
+    background-color: #606060;
+    color: #E0E0E0;
+    border-style: none;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+.searchHeader {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.searchFlightNumbersContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.searchFlightNumbers {
+    font-size: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.searchImage {
+    margin-bottom: 20px;
+}
+.searchPurchaseDisc {
+    font-size: 2em;
+}
+
+.relatedDiscHeader {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

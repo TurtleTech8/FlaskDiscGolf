@@ -5,8 +5,8 @@
         <title>{% block title %}{% endblock %}</title>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.js"></script>   
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.js"></script>
+
         <!-- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />   -->
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='misc.css')}}" />
@@ -15,7 +15,7 @@
 
     <body style="background-color: #202020; color: #E0E0E0">
         <div class="navbar">
-            <span>All data is courtesy of <a href="https://www.marshallstreetdiscgolf.com/" target="_blank">Marshall Street Disc Golf</a></span>
+            <span>Demo only. All data is courtesy of <a href="https://www.marshallstreetdiscgolf.com/" target="_blank">Marshall Street Disc Golf</a></span>
             <span class="spacer"></span>
             <a class="navbarLinks" href="{{ url_for('home') }}">Home</a>
             <a class="navbarLinks" href="{{ url_for('search') }}">Search</a>

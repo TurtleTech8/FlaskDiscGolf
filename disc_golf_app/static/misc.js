@@ -44,7 +44,7 @@ function createHeaders() {
 
         let discBox = document.createElement('div')
         discBox.id = x
-        discBox.classList.add('brandDiscs')
+        discBox.classList.add('discContainer')
         discBox.classList.add('hide')
         innerBox.appendChild(discBox)
     })
@@ -112,6 +112,7 @@ function addDiscs() {
         let disc = document.createElement('div')
         disc.innerText = x.name
         disc.classList.add('circle')
+        disc.classList.add('pointer')
         disc.classList.add(x.distance_category.replace(' ', '-').toLowerCase())
         disc.setAttribute('data-name', x.name)
         document.getElementById(x.brand).appendChild(disc)
