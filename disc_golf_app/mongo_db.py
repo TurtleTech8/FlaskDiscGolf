@@ -1,8 +1,12 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+import json
 
 class MongoDB:
-    uri = "mongodb+srv://November:RandomCocoa24@cluster0.fgs9tdn.mongodb.net/?retryWrites=true&w=majority"
+    password = ""
+    with open(".config") as f:
+        password = json.load(f)['MongoDBPassword']
+    uri = f"mongodb+srv://November:{password}@cluster0.fgs9tdn.mongodb.net/?retryWrites=true&w=majority"
     def __init__(self):
         self.client = None
         
