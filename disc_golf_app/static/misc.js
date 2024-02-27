@@ -105,6 +105,12 @@ function createModal(event){
     fade.innerHTML = currentDisc.fade
     fade.classList.add('flightNumbers')
     flightContainer.appendChild(fade)
+
+    let addToCartButton = document.createElement('a')
+    addToCartButton.innerHTML = 'Add to Cart'
+    addToCartButton.classList.add('modalAdd')
+    addToCartButton.onclick = addToCart
+    box.appendChild(addToCartButton)
 }
 
 function addDiscs() {
@@ -116,5 +122,14 @@ function addDiscs() {
         disc.classList.add(x.distance_category.replace(' ', '-').toLowerCase())
         disc.setAttribute('data-name', x.name)
         document.getElementById(x.brand).appendChild(disc)
+    })
+}
+
+function addToCart() {
+    $.ajax({
+        url: "\\addToCart",
+        success: function(result) {
+            console.log(result)
+        }
     })
 }

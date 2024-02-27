@@ -3,6 +3,7 @@ from flask import request
 from flask import session
 from . import app
 import disc_golf_app.disc_data as disc_data
+import disc_golf_app.cart as cart
 
 app.secret_key = "SUPER_SECRET_KEY"
 
@@ -23,21 +24,25 @@ def home():
 def search():
     checkSession()
 
-    print(session['uid'])
+    print(session['cart'])
     return render_template(
         "search.html",
         brands=disc_data.getAllBrands(),
         discs=disc_data.getSearchDiscs()
     )
 
-@app.route("/cart")
-def cart():
+@app.route("/shoppingCart")
+def shoppingCart():
     checkSession()
 
     print(session['uid'])
     return render_template(
         "cart.html"
     )
+
+@app.route("/addToCart")
+def addToCart():
+     return cart.addDisc()
 
 @app.route("/getDisc")
 def getDisc():
